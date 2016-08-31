@@ -21,6 +21,5 @@ public class MsyncHandlerSyncMetaStatistic extends SimpleChannelInboundHandler<R
     }
 
     protected void channelRead0(ChannelHandlerContext ctx, Rosterbody.RosterBody msg) throws Exception {
-        log.debug("{}: recv {}", client.getFullName(), msg);
     }
 }

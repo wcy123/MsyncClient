@@ -21,6 +21,6 @@ public class MsyncHandlerSyncMetaConference extends SimpleChannelInboundHandler<
     }
 
     protected void channelRead0(ChannelHandlerContext ctx, Mucbody.MUCBody msg) throws Exception {
-        log.debug("{}: recv {}", client.getFullName(), msg);
+
     }
 }

@@ -10,7 +10,6 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class MsyncCmdDecoder extends MessageToMessageDecoder<Msync.MSync> {
     protected void decode(ChannelHandlerContext ctx, Msync.MSync msg, List<Object> out) throws Exception {
-        log.debug("recv COMMAND: {}", msg);
         switch(msg.getCommand()) {
             case PROVISION:
                 out.add(Msync.Provision.parseFrom(msg.getPayload()));

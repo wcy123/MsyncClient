@@ -34,7 +34,7 @@ public class MsyncHandlerUnread extends SimpleChannelInboundHandler<Msync.CommUn
 
     private void startSync(Jid.JID queue, Channel channel) {
         if(client.isLocked(queue)) {
-            log.debug("already in sync mode for {} ", queue);
+            log.warn("already in sync mode for {} ", queue);
             return;
         }
         client.lock(queue);

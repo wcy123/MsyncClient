@@ -32,7 +32,7 @@ public class MsyncHandlerNotice extends SimpleChannelInboundHandler<Msync.CommNo
     private void startSync(Jid.JID queue, Channel channel) throws InterruptedException {
         Thread.sleep(10000);
         if(client.isLocked(queue)) {
-            log.debug("already in sync mode for {} ", queue);
+            log.warn("already in sync mode for {} ", queue);
             return;
         }
         client.lock(queue);

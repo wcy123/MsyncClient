@@ -21,7 +21,7 @@ public class LoginOnConnected implements ChannelFutureListener {
     }
 
     public void operationComplete(ChannelFuture future) throws Exception {
-        log.debug("{}: connected", client.getFullName());
+        log.info("{}: connected", client.getFullName());
         if (future.isSuccess()) {
             sendProvision();
         } else {

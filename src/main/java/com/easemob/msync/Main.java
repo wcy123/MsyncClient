@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 
 /**
  * Created by wangchunye on 8/30/16.
+ * the main entry point
  */
 @Slf4j
 public class Main {
@@ -18,8 +19,8 @@ public class Main {
         String host = "120.26.12.158";
         int port = 6717;
         Clients.startClient(new DummyClientListener(), clientData, host, port);
-        ClientData clientData2 = new ClientData();
-        clientData2.setUser("c7");
-        Clients.startClient(new DummyClientListener(), clientData2, host, port);
+//        ClientData clientData2 = new ClientData();
+//        clientData2.setUser("c7");
+//        Clients.startClient(new DummyClientListener(), clientData2, host, port);
     }
 }

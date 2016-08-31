@@ -20,6 +20,6 @@ public class MsyncHandlerSyncMetaMuc extends SimpleChannelInboundHandler<Message
     }
 
     protected void channelRead0(ChannelHandlerContext ctx, Messagebody.MessageBody msg) throws Exception {
-        log.debug("{}: recv {}", client.getFullName(), msg);
+
     }
 }

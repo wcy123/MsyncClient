@@ -16,6 +16,5 @@ public class ProtobufEncoder extends io.netty.handler.codec.protobuf.ProtobufEnc
     @Override
     protected void encode(ChannelHandlerContext ctx, MessageLiteOrBuilder msg, List<Object> out) throws Exception {
         super.encode(ctx, msg, out);
-        log.debug("send MSYNC: {} ", msg);
     }
 }

@@ -21,6 +21,6 @@ public class MsyncHandlerSyncMetaRoster extends SimpleChannelInboundHandler<Rost
     }
 
     protected void channelRead0(ChannelHandlerContext ctx, Rosterbody.RosterBody msg) throws Exception {
-        log.debug("{}: recv {}", client.getFullName(), msg);
+
     }
 }

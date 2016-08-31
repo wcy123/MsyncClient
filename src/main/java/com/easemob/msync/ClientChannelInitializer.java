@@ -45,7 +45,6 @@ class ClientChannelInitializer extends ChannelInitializer<SocketChannel> {
     public void initChannel(SocketChannel ch) throws Exception {
         final ChannelPipeline pipeline = ch.pipeline();
         final EventExecutorGroup eg = new DefaultEventExecutorGroup(N_THREADS);
-        pipeline.addLast("logger", new LoggingHandler(LogLevel.TRACE));
 
         /* framer */
         pipeline.addLast(
@@ -68,10 +67,12 @@ class ClientChannelInitializer extends ChannelInitializer<SocketChannel> {
         /* MSync level encoder/decoder */
         pipeline.addLast("protobufEncoder", new ProtobufEncoder());
         pipeline.addLast("protobufDecoder", new ProtobufDecoder());
+        pipeline.addLast("logger1", new LoggingHandler(LogLevel.DEBUG));
 
         /* command level encoder/decoder */
         pipeline.addLast("metaDecoder", new MsyncCmdDecoder());
         pipeline.addLast("metaEncoder", new MsyncCmdEncoder(client));
+        pipeline.addLast("logger2", new LoggingHandler(LogLevel.DEBUG));
 
         /* logic handler */
         pipeline.addLast("provisonHandler", new MsyncHandlerProvision(client));

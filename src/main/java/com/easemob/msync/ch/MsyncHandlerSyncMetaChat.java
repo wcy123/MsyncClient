@@ -20,7 +20,6 @@ public class MsyncHandlerSyncMetaChat extends SimpleChannelInboundHandler<Messag
     }
 
     protected void channelRead0(ChannelHandlerContext ctx, Messagebody.MessageBody msg) throws Exception {
-        log.debug("{}: recv {}", client.getFullName(), msg);
         client.fireReadMeta(msg);
     }
 }

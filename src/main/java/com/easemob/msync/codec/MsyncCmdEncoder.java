@@ -21,7 +21,6 @@ public class MsyncCmdEncoder extends MessageToMessageEncoder<Object> {
 
     protected void encode(ChannelHandlerContext ctx, Object msg, List<Object> out) throws Exception {
         final Msync.MSync msync;
-        log.debug("send COMMAND: {}", msg);
         if (msg instanceof Msync.Provision) {
             msync = encodeProvison((Msync.Provision) msg);
         } else if (msg instanceof Msync.CommUnreadUL) {

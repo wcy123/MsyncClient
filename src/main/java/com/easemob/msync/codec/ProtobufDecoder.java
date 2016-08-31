@@ -21,6 +21,5 @@ public class ProtobufDecoder extends io.netty.handler.codec.protobuf.ProtobufDec
     @Override
     protected void decode(ChannelHandlerContext ctx, ByteBuf msg, List<Object> out) throws Exception {
         super.decode(ctx, msg, out);
-        log.debug("recv MSYNC: {}", out.get(0));
     }
 }

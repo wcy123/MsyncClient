@@ -20,7 +20,6 @@ public class MsyncHandlerSync extends SimpleChannelInboundHandler<Msync.CommSync
     }
 
     protected void channelRead0(ChannelHandlerContext ctx, Msync.CommSyncDL msg) throws Exception {
-        log.debug("{} recv sync -> {}", client.getFullName(), msg);
         if (msg.hasStatus() && msg.getStatus().getErrorCode() == Msync.Status.ErrorCode.OK &&
                 msg.hasQueue()) {
             final Jid.JID queue = msg.getQueue();
